@@ -1,0 +1,73 @@
+<?php
+use Phalcon\Exception;
+
+class DspException extends Exception {
+    
+    const APPKEY_NOT_EXIST = 10000;    //appkey不存在
+    const SYSTEM_BUSY = 10001;    //系统繁忙请重试
+    const MISS_PARAMS = 10002;    //缺少参数，数据不完整
+    const INVALID_REQUEST = 10003;    //非法请求
+    const NOT_FOUND = 10004;    //接口不存在
+    const SIGN_ERR = 10005;    //签名验证错误
+    const IP_REQUEST_LIMIT = 10006;    //IP请求上限
+    const DISCARD = 10007;    //该接口已经废弃
+    const FAILURE = 10008;    //操作失败
+    const VERSION_ERR = 10009;  //版本号错误
+    const DATE_FORMAT_ERR = 10010; //日期格式错误
+    
+    const SYSTEM_ERROR = 1170000;
+    const AD_ID_EMPTY = 1170001;
+    const AD_NOT_EXIST = 1170002;
+    const AD_NAME_EMPTY = 1170003;
+    const AD_NAME_EXIST = 1170004;
+    const NOT_SUPPORT_TARGET = 1170005;
+    const NOT_SUPPORT_AD_TYPE = 1170006;
+    const NOT_SUPPORT_PLATFORM = 1170007;
+    const NOT_SUPPORT_COST_TYPE = 1170008;
+    const IOS_CPC_PRICE_EMPTY = 1170009;
+    const IOS_CPC_PRICE_BELOW = 1170010;
+    const IOS_CPM_TARGETS_EMPTY = 1170011;
+    const IOS_CPM_TARGETS_BELOW = 1170012;
+    const ANDROID_CPC_PRICE_EMPTY = 1170013;
+    const ANDROID_CPM_TARGETS_EMPTY = 1170014;
+    const ANDROID_CPC_PRICE_BELOW = 1170015;
+    const ANDROID_CPM_TARGETS_BELOW = 1170016;
+    const WEB_CPC_PRICE_EMPTY = 1170017;
+    const WEB_CPM_TARGETS_EMPTY = 1170018;
+    const WEB_CPC_PRICE_BELOW = 1170019;
+    const WEB_CPM_TARGETS_BELOW = 1170020;
+    const BALANCE_LOW_NEW_CPM_AD = 1170021;
+    const DAY_COST_LIMIT_BELOW = 1170022;
+    const DAY_COST_LIMIT_MUST = 1170023;
+    const BEGIN_TIME_EMPTY = 1170024;
+    const END_TIME_EMPTY = 1170025;
+    const BEGIN_BIG_END_TIME = 1170026;
+    const BEGIN_HOUR_BETWEEN = 1170027;
+    const END_HOUR_BETWEEN = 1170028;
+    const NOT_SUPPORT_TAG = 1170029;
+    const NOT_SUPPORT_AREA = 1170030;
+    const NOT_SUPPORT_SITE = 1170031;
+    const NOT_SUPPORT_PYSTATUS = 1170032;
+    const TITLE_LEN_LIMIT = 1170033;
+    const BRAND_NAME_LEN_LIMIT = 1170034;
+    const SOURCE_NOT_COMPLETE = 1170035;
+    const IMAGE_SIZE_ERROR = 1170036;
+    const WATER_MARK_ERROR = 1170037;
+    const FILE_UPLOAD_ERROR = 1170038;
+    const TARGET_EMPTY = 1170039;
+    const NOT_FIND_ADS = 1170040;
+    const LIMIT_RANGE_ERROR = 1170041;
+    const URL_ERROR = 1170042;
+    const BEGIN_BIG_END_HOUR = 1170043;
+    const AD_STOP_ERROR = 1170044;
+    const AD_NOT_ALLOW_EDIT = 1170045;
+    const NOT_SUPPORT_REG_TIME = 1170046;
+    const NOT_SUPPORT_AD_SIZE = 1170047;
+    
+    const AD_NOT_SUPPORT_COST_TYPE = 1170048;
+    const TARGET_NAME_EMPTY = 1170049;
+
+    const PARAMS_ERROR = 1171000;
+    const AD_NOT_NED_STOP = 1171001;
+    const AD_NOT_NED_START = 1171002;
+}

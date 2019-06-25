@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cms-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content="妈妈网, 推广">
+    <meta name="description" content="妈妈网">
+    <title>合作联系 - 妈妈网推广平台</title>
+    <link href="/css/main.css?v=1.2" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <h1><a href="/ads"><img src="/images/logo.png" alt="妈妈网推广平台"></a></h1>
+            <div class="btn">
+                <?php if($is_login){?>
+                <a href="/financetool" class="btn-white">充值</a>
+                <a href="/" class="btn-white"><?php echo $username;?></a>
+                <?php }else{?>
+                <a href="/ads/register" class="btn-white">注册</a>
+                <a href="/" class="btn-white">登录投放平台</a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <div id="contactBase" class="contact">
+        <h2>合作 · 联系</h2>
+        <div class="contact-box" id="contact-box">
+            <div class="letter">
+                <p>嗨！您终于来了~等您很久了~<br>如果有意合作，让我们平台为您提供流量变现的机会，请留下您的联系方式，我们会有专人联系您~</p>
+                <span class="from">- FROM· 妈网蜂鸟团队</span>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="line">
+                    <label for="contactName">您的姓名：</label>
+                    <input id="contactName" name="name" class="J-Validator" type="text" value="" placeholder="如何称呼？">
+                    <p class="tips"></p>
+                </div>
+                <div class="line">
+                    <label for="contactWay">联系方式：</label>
+                    <input id="contactWay" name="mobile" class="J-Validator" type="text" value="" placeholder="请输入有效联系方式，邮箱或手机都可">
+                    <p class="tips"></p>
+                </div>
+                <div class="line">
+                    <label for="contactTime">方便洽谈时间：</label>
+                    <input id="contactTime" name="spares" type="text" value="" placeholder="我们只会在您方便的时间与您联系（非必填）">
+                    <p class="tips"></p>
+                </div>
+                <div class="line">
+                    <label for="contactDetail">合作意向说明：</label>
+                    <textarea id="contactDetail" name="desc" class="J-Validator" type="text" value="" placeholder="请简要说明下有意合作的项目或应用"></textarea>
+                    <p class="tips"></p>
+                </div>
+                <a id="getContact" href="javascript:;" class="btn-green">马上联系</a>
+            </form>
+        </div>
+    </div>
+    <div id="contactSuccess" class="contact" style="display: none;">
+        <div class="contact-box success">
+            <img src="./images/contact_success.png" alt="">
+            <h3>已经成功飞鸽传书，我们会在您方便的时间与您联系<br>请注意来电或邮件~ 祝安~</h3>
+            <p>- FROM· 妈网蜂鸟团队 -</p>
+            <a href="/ads" class="btn-green">回到首页</a>
+        </div>
+    </div>
+    <div class="footer">© 2017 广州盛成妈妈网络科技股份有限公司（股票代码：妈妈网834093）版权所有 粤ICP备09174648号</div>
+    <script src="//static.mama.cn/std/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        contactValidator = {
+            checkName: function() {
+                var tester = new RegExp("^[A-Za-z\u4e00-\u9fa5]+$");
+                return tester.test(this.val);
+            },
+            checkMixin: function() {
+                var tester1 = new RegExp("[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"),
+                    tester2 = new RegExp("^1[345789]\\d{9}$");
+                return tester1.test(this.val) || tester2.test(this.val);;
+            },
+            trim: function(val) {
+                this.val = val.replace(/(^\s*)|(\s*$)/g, "");
+            },
+            require: function() {
+                return this.val.length == 0
+            },
+            contactName: function() {
+                var el = '#contactName';
+                this.trim($(el).val());
+                if (this.require()) {
+                    this.showTips(el, '您的姓名不能为空');
+                } else if (!this.checkName()) {
+                    this.showTips(el, '含有非法字符，请更换');
+                } else {
+                    this.showTips(el, '');
+                }
+            },
+            contactWay: function() {
+                var el = '#contactWay';
+                this.trim($(el).val());
+                if (this.require()) {
+                    this.showTips(el, '联系方式不能为空');
+                } else if (!this.checkMixin()) {
+                    this.showTips(el, '请填写正确的联系方式');
+                } else {
+                    this.showTips(el, '');
+                }
+            },
+            contactDetail: function(){
+                var el = '#contactDetail';
+                this.trim($(el).val());
+                if (this.require()) {
+                    this.showTips(el, '合作意向不能为空');
+                } else {
+                    this.showTips(el, '');
+                }
+            },
+            showTips: function(el, val) {
+                if (val != '') {
+                    $(el).addClass('error');
+                } else {
+                    $(el).removeClass('error');
+                }
+                $(el).next().text(val);
+            },
+            check: function(arr) {
+                var _this = this;
+                $.each(arr, function(i) {
+                    _this[arr[i]]();
+                })
+            },
+            box: $("#contact-box"),
+            bindEvent: function() {
+                var _this = this;
+
+                $(".J-Validator").on("keyup focusout", function() {
+                    var vid = $(this).attr("id");
+                    contactValidator.check([vid]);
+                });
+
+                $("#getContact").on("click", function() {
+                    contactValidator.check(['contactName', 'contactWay', 'contactDetail']);
+                    if (!_this.box.find(".tips").text().length) {
+                        $.ajax({
+                            url: '',
+                            type: 'POST',
+                            data: $("#contactForm").serialize(),
+                            dataType: 'json'
+                        })
+                        .done(function(res){
+                            if(res.code == 200){
+                                $("#contactSuccess").show();
+                                $("#contactBase").hide();
+                            }
+                            else{
+                                alert(res.msg);
+                            }
+                        })
+                        .fail(function(){
+                            alert("网络错误，请稍候再试！");
+                        });
+                    }
+                });
+            }
+        }
+
+        contactValidator.bindEvent();
+    </script>
+</body>
+</html>

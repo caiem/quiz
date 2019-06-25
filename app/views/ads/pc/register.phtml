@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-cms-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content="妈妈网, 推广">
+    <meta name="description" content="妈妈网">
+    <title>自助注册 - 妈妈网推广平台</title>
+    <link href="/css/main.css?v=1.2" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <h1><a href="/ads"><img src="/images/logo.png" alt="妈妈网推广平台"></a></h1>
+            <div class="btn">
+                <?php if($is_login){?>
+                <a href="/financetool" class="btn-white">充值</a>
+                <a href="/" class="btn-white"><?php echo $username;?></a>
+                <?php }else{?>
+                <a href="/ads/register" class="btn-white">注册</a>
+                <a href="/" class="btn-white">登录投放平台</a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <div id="register" class="register <?php echo empty($update) ? 'step-1 ': 'step-3';?>">
+        <h2>四步轻松开启推广之路</h2>
+        <ul id="step" class="step">
+            <li class="tag-1"><b>1</b>自助注册</li>
+            <li class="tag-2"><b>2</b>阅读协议</li>
+            <li class="tag-3"><b>3</b>申请开户</li>
+            <li class="tag-4"><b>4</b>行业资质</li>
+        </ul>
+        <form class="reg-form" method="POST" enctype="multipart/form-data" action="<?PHP echo empty($update)?'/ads/doregister':'/ads/apply'?>">
+            <div class="reg-box box1 J-regBox">
+                <div class="radio">
+                    <label>账户类型：</label>
+                    <label class="option checked J-option" for="direct">直客<input id="direct" type="radio" name="account_type" value="0" checked="checked"></label>
+                    <label class="option J-option" for="agency">代理<input id="agency" type="radio" name="account_type" value="1"></label>
+                    <i class="icon-help"></i>
+                    <span class="help">平台目前仅支持广告主自助注册<br>若为联媒合作，请自行联系平台的商务洽谈</span>
+                </div>
+                <div class="line">
+                    <label for="accountName">账户名称：</label>
+                    <input name="account_name" id="accountName" class="J-Validator" type="text" value="" placeholder="请输入账号名，允许中英文数字结合">
+                    <p class="tips"></p>
+                </div>
+                <div class="line">
+                    <label for="accountPWD">登录密码：</label>
+                    <input name="account_pwd" id="accountPWD" class="J-Validator" type="password" value="" placeholder="请输入最少六位数密码，数字英文结合">
+                    <p class="tips"></p>
+                </div>
+                <div class="line">
+                    <label for="accountEmail">联系邮箱：</label>
+                    <input name="account_email" id="accountEmail" class="J-Validator" type="text" value="" placeholder="请保证邮箱的有效性和可用性">
+                    <p class="tips"></p>
+                </div>
+                <a id="stepOne" href="javascript:;" class="btn-green">注册账户</a>
+                <a class="about" target="_blank" href="/ads/faq#achor_02">先了解怎么开户？</a>
+            </div>
+            <div class="reg-box box2 J-regBox">
+                <div id="ruleTxt" class="rule-txt">
+                    <p style="margin-top:10px;text-align:center">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 21px;">妈妈网合作协议</span></strong></span>
+                    </p>
+                    <p style="margin-top:10px;text-align:center">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>2017年10月修订）</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p style="text-indent: 32px">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong>欢迎您使用妈妈网推广平台及相关服务！</strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;"></span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;"></span></strong></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">为使用妈妈网推广平台及相关服务，</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">您应当阅读并遵守《</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">妈妈网</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">合作协议》（以下简称</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">“</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">本协议</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">”</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">）等相关协议、规则。请您务必审慎阅读、充分理解各条款内容，特别是限制或免除责任的条款，以及开通或使用某项服务的单独协议、规则。限制或免责条款可能以加粗或加下划线的形式提示您重点注意。</span></strong></span><span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 14px;"></span></strong><strong><span style="font-size: 14px;"></span></strong></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">除非您已阅读并接受本协议及相关协议、规则等的所有条款，否则，您无权使用本服务。一旦您选择</span>“同意”并完成注册流程，或您以任何方式使用本服务，即视为您已阅读并同意上述协议、规则等的约束。</span></strong><strong><span style="font-family: 微软雅黑; font-size: 14px;"></span></strong><strong><span style="font-family: 微软雅黑; font-size: 14px;"></span></strong></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">您有违反本协议的任何行为时，</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">妈妈网</span></strong><strong><span style="font-family: 微软雅黑, Microsoft YaHei;">有权依照您违反情况随时单方采取限制、中止或终止向您提供服务等措施，并有权追究您相关责任。</span></strong></span><span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 14px; font-family: 微软雅黑;"></span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;"></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 16px;"><span style="font-size: 16px;">第一条</span> <span style="font-size: 16px;">服务内容</span></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">1.1“妈妈网”，即广州盛成妈妈网络科技股份有限公司；</span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">1.2&nbsp;<span style="font-size: 14px;">客户：是指通过妈妈网推广平台向用户宣传、推广产品、服务的主体，在本协议中特指您。</span></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px;">1.3“妈妈网推广服务”：指妈妈网己经开通和陆续开通的在www.mama.cn网站及妈妈网wap网站、应用程序、</span><span style="font-size: 14px; background: rgb(255, 255, 0);">以及妈妈网合作伙伴提供的相关应用程序、网页</span><span style="font-size: 14px;">等相关页的特定位置展示您信息的推广服务及其他相关的衍生服务，包括但不限于：妈妈网App等服务方式。</span></span>
+                    </p>
+                    <p style="margin-top:6px;margin-bottom:6px">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">1.4 您向妈妈网申请一个妈妈网推广服务管理账号，您可以根据其注册用户名和密码，登陆妈妈网推广服务管理账号，修改账号内的推广信息，查询点击量统计、费用统计、查询妈妈网的推广政策等等。</span>
+                    </p>
+                    <p style="margin-top:6px;margin-bottom:6px;text-indent:28px">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">需要特别注意的是，您应妥善保管账户和密码，并采取合理措施防止密码被窃取，由于密码泄露造成的后果由您自行承担。任何通过您账户号码和密码登录</span>“妈妈网推广平台”及办理业务的行为均视为您的行为，</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">由</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">您</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">承担由此所导致的相关后果和责任</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">。</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第二条</span> <span style="font-family: 微软雅黑;">客户权利与义务</span></span></strong></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><span style="font-family: 微软雅黑; font-size: 16px;">2.1</span><span style="font-size: 14px; font-family: 微软雅黑;">您保证是依据法律法规规定设立、经营的主体，已经取得必要经营资质，有权利和能力签订和履行本协议，您提交的一切资料（包括但不限于注册信息、身份资质、经营资质、授权文件等）真实、合法、有效，保证使用来源合法的资金支付服务费用。推广素材上线前您应当依法向妈妈网提供下列证明文件，并保证其真实、合法、完整和有效：</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>1）营业执照、身份证等身份证明以及其他生产、经营资质的证明文件等。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>2）完整、合法、有效的联系方式，如邮箱、电话、地址等<span style="font-family: 微软雅黑;">，并同意接受妈妈网以电话、邮件或上门拜访等方式确认与</span>“<span style="font-family: 微软雅黑;">妈妈网推广服务</span>”<span style="font-family: 微软雅黑;">的相关事宜。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>3）其他必要证明文件，包括但不限于产品质量检验证明、授权文件、<span style="font-family: 微软雅黑;">相关审查表等。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">若上述信息发生变更的，您应当在变更之日起</span>3个工作日内书面通知<span style="font-family: 微软雅黑;">妈妈网或依照妈妈网推广平台规则进行修改。</span></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;">2.2<span style="font-family: 微软雅黑;">您的提供及发布的推广素材应当真实、合法、有效，保证不侵犯他人合法权益且符合法律法规以及妈妈网平台规则的要求，包括但不限于：</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>1）<span style="font-family: 微软雅黑;">推广素材不得含有安全隐患，包括但不限于不得含有钓鱼网站、病毒、木马等恶意程序。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>2）<span style="font-family: 微软雅黑;">推广素材中使用他人名义、形象（包括漫画形象）、标识或作品等任何权益的，或声称与他人存在任何合作关系的，均应当事先取得权利人的同意。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>3）<span style="font-family: 微软雅黑;">推广素材涉及的品牌、性能、质量、价格、允诺等全部内容应当清楚、明白且与实际相符，若含有赠送、奖励（包括但不限于游戏币、虚拟物、实物、折扣优惠等）等承诺的，应当保证承诺内容与实际情况一致，不得含有虚假的奖励、有奖销售、赠送等内容。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>4）<span style="font-family: 微软雅黑;">推广素材指向的落地页或推广的</span>QQ号、QQ群、公众号、应用、网站等任何推广对象，均为依法设立和运营，并且，您对推广对象须拥有合法权利，有权对其进行宣传、使用。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>5）推广对象不得实施任何违法违规的行为，也不得含有盗号、窃取密码、木马、病毒等危害网络安全的恶意程序，包括但不限于推广的网站/应用/公众号等不得推广或销售假冒伪劣产品、从事非法经营活动、传播侵权或色情信息，推广的应用/软件或其他产品中不得存在扣费项目不明确、扣费提示不清晰、恶意扣费、暗设扣费程序等损害用户权益的情况。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>6）法律法规或<span style="font-family: 微软雅黑;">妈妈网平台规则规定的其他情况。</span></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;">2.3<span style="font-family: 微软雅黑;">落地页内容应当与您提供的推广素材具有紧密的关联性，并且，落地页实际展示的内容与审核时递交的内容应当保持一致，包括但不限于：</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>1）落地页应当安全、稳定，能够正常打开浏览。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>2）投放期间，不得对落地页网站展示内容进行变更，比如将原本推广的普通产品变更为需要具备特殊经营资质方可经营的产品等；如有任何修改需要提前通知<span style="font-family: 微软雅黑;">妈妈网并重新提交审核。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>3）不得对<span style="font-family: 微软雅黑;">推广素材设置定向跳转，比如根据地域、时间、</span>ip等要素设置跳转等，使得落地页与<span style="font-family: 微软雅黑;">推广素材审核时的链接不一致等。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>4）不得通过对落地页设置恶意代码、病毒等任何方式实施违反法律法规或本协议约定的行为。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>5）其他违反法律法规或<span style="font-family: 微软雅黑;">妈妈网平台规则的情形。</span></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><span style="font-family: 微软雅黑; font-size: 14px;">2.4</span><strong><span style="font-size: 14px; font-family: 微软雅黑;">因您违反本协议约定产生任何纠纷和争议的，应由您自行独立解决并承担全部责任，包括但不限于以您自己名义出面与第三方协商、应诉或接受主管机关的审查等，并承担所有费用、赔偿损失等。您违约的情况包括但不限于：</span></strong></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>1）<span style="font-family: 微软雅黑;">推广素材本身违反法律法规或违反本协议约定，如推广素材以虚假或者引人误解的内容欺骗、误导用户的。</span></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>2）推广对象本身违反法律法规或违反本协议约定，如推广的产品、服务是假冒伪劣的，或推广的产品、服务散布淫秽、色情、赌博、暴力、凶杀、恐怖、骚扰、低俗或者教唆犯罪等违法或违反公序良俗的内容的。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>3）通过推广对象实施的行为违反法律法规或违反本协议约定，如利用推广的网站、应用实施欺骗、误导用户、窃取用户信息的行为的，或利用推广对象实施未获得行政许可的业务的。</span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 14px; font-family: 微软雅黑;">如因您违反本协议约定给</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">或其他任何主体造成损失的（包括但不限于因处理用户投诉、用户索赔、权利人索赔、行政处罚等支付的费用），您应予以赔偿。</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">2.5您应维护好自己的网站，保证网站正常运营，因网站服务器被攻击、或其他技术原因而无法上线推广的，所有责任由您自己承担。</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">2.6您不得对妈妈网及妈妈网关联公司的利益、商誉和品牌形象造成任何现实或潜在的损害或冲突，否则妈妈网有权通知您立即解除本协议，或终止妈妈网推广服务。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">2.7您有义务遵守《妈妈网合作协议》（线上协议）以及妈妈网推广规则（如有）。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">2.8您保证对通过妈妈网进行推广的网站为合法设立且具备合法资质，您对该网站拥有合法权利；或具有推广相应内容的全部资质。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">2.9您应当保证其账户等财务信息的真实性并与推广网站的所有人及《妈妈合作协议》签约主体保持一致，如因您提供的财务信息虚假或者不一致，导致的财务风险由您承担，妈妈网不承担任何责任，由此给妈妈网造成损失的，您应当予以赔偿。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-family: 微软雅黑; font-size: 16px;"><span style="font-family: 微软雅黑;">第三条</span> &nbsp;<span style="font-family: 微软雅黑;">妈妈网权利与义务</span></span></strong><span style="font-family: 宋体; font-size: 16px;"><br/></span><span style="font-family: 微软雅黑; font-size: 14px;">3.1</span><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">提供与</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网推广平台</span></strong><strong><span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">服务有关的技术支持或资料说明</span>,并负责</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网推广平台</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">的运营、维护。为向您提供更加优质的服务，</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">及其关联公司有权不断调整</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网推广平台</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">及其具体服务，</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网推广平台</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">及其具体服务名称、功能、域名的调整，不影响本协议的效力。</span></strong></span>
+                    </p>
+                    <p style="text-indent:28px;line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网有权根据单方运营安排随时调整或终止部分或全部的服务，包括但不限于停止特定服务、对某项服务进行升级、调整某项服务的功能或整合某些服务等。但是，</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">应提前至少</span></strong><strong><span style="font-family: 微软雅黑; font-size: 14px;">10</span></strong><strong><span style="font-size: 14px; font-family: 微软雅黑;">个自然日通知您；您有权根据自身需求决定是否继续使用相关服务。</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">3.2<span style="font-family: 微软雅黑;">妈妈网有权随时删除含有任何危害国家安全、淫秽色情、虚假、侮辱、诽谤、恐吓或骚扰、侵犯他人版权或人身权或其他合法权益等违法或有违社会公序良俗的内容或指向这些内容的链接，或对您提交的全部或部分关键词予以下线。妈妈网有权根据相关法律法规要求及产品政策或服务功能拒绝您提交的关键词。</span></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">3.3妈妈网不向其他任何第三方保证和承诺您网页和信息的真实性、合法性、准确性和完整性，您自行对其网站提供的内容、产品、服务等承担全部责任。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">3.4您违反本协议条款规定，导致其推广被妈妈网下线、或账户被关停，从而无法使用妈妈网推广服务的，所有责任由您自己承担，与妈妈网无关。</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">3.5为履行本协议，妈妈网有权在妈妈网的服务器上保存您的信息（包括但不限于您的注册信息、消费信息、推广网站/<span style="font-family: 微软雅黑;">网页、信誉等级信息、网民评价信息等）；妈妈网在法律法规所允许的范围内，有权使用和对外披露您信息，包括但不限于为妈妈网推广服务系统升级、抽样测试、更新的目的，出于保护网民权益提升互联网诚信环境的目的、依据司法和</span>/<span style="font-family: 微软雅黑;">或行政的要求使用或披露您信息。</span></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><span style="font-family: 微软雅黑; font-size: 14px;">3.6</span><span style="font-family: Helvetica Neue; font-size: 12px;">&nbsp;</span><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网有权对您提交的资料及推广素材进行审核并根据妈妈网推广平台规则决定是否允许投放推广素材，该审核仅为形式审核，不代表妈妈网有义务对推广素材的真实性、合法性进行任何确认或担保，并且，并不因为妈妈网的审核，而减轻您对经营资质、推广素材等的真实性、合法性的保证责任，由此产生的一切责任和后果仍由您单独承担。</span></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第四条</span> &nbsp;<span style="font-family: 微软雅黑;">费用与发票</span></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">4.1服务费充值</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">妈妈网推广服务采用预付费方式，您需保持其妈妈网平台账户内余额充足并及时续费，否则，会影响服务的使用。</span><strong><span style="font-size: 14px; background: rgb(255, 255, 0); font-family: 微软雅黑;">费用一经充值，概不退换，如合同届满仍未使用完的，妈妈网同意为您延长相应服务期。</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">4.2 推广服务费计算</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>1）服务费以人民币计算。妈妈网可能提供CPC(点击计费)和CPM(千次展示计费)等不同的计费方式，具体以妈妈网平台规则为准。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>2）推广素材的投放次数、点击次数、曝光次数以及消耗数据等均以妈妈网后台数据为准。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">4.3 发票</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>1）妈妈网仅向您开具发票，不向任何第三方开具发票。妈妈网按您实际支付的现金金额开具发票。您应提交开具发票申请及相应材料，包括但不限于充值记录截屏、发票抬头名称、发票开具金额等。</span>
+                    </p>
+                    <p style="text-indent: 0;line-height: 150%">
+                        <span style="font-family: 微软雅黑; line-height: 150%; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>2）发票开具项目为&nbsp;“技术服务费”。</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>3）您申请被审核通过后，妈妈网将在审核通过后的次月完成发票开具；相关发票一经发送至您所填写的通讯地址，即视为妈妈网已经完成了发票开具义务。</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>4）发票不可重复开具，因您递交材料错误造成的发票抬头、邮寄地址等信息错误，由您自行承担相应责任。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第五条</span> <span style="font-family: 微软雅黑;">声明、陈述与保证</span></span></strong></span>
+                    </p>
+                    <p style="text-indent:14px">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">双方（即您和妈妈网）分别向对方声明、陈述和保证：</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">1）其有权签署本协议并有能力履行其于本协议项下的义务。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">2）其有资格从事本协议项下之合作，而该合作符合其经营范围之规定。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">3）其签署的协议符合现行有效的法律、法规，不损害任何第三方的合法权益。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">4）除本协议另有规定者外，本协议之签署及本协议所规定的条款的完成不会导致违反、取消或终止任何协议、承诺或其它正式文件的任何条款和条件，或构成任何协议、承诺或其它正式文件下的违约事项；亦不会违反任何法律或任何管理机构或政府组织之任何规定，或对业务运作有重大影响的任何法院、管理机关或政府组织的任何判决、裁定或规定。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第六条</span> <span style="font-family: 微软雅黑;">不可抗力及免责</span></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">6.1 因受不可抗力影响而不能履行或不能完全履行本协议的一方无需承担违约责任。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">但是，遇有不可抗力事件的一方，应立即将事件情况书面通知对方，并应于</span>5个工作日内出示有效证明。双方按照事件对协议的履行的影响程度，再行协商决定是否继续履行本协议或终止协议。</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">6.2 <span style="font-family: 微软雅黑;">鉴于互联网之特殊性质，妈妈网的免责事由亦包括但不限于下列任何影响妈妈网平台正常运营之情形，妈妈网应及时与相关单位配合进行修复：</span></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>1）黑客攻击、计算机病毒侵入或发作。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>2）基础运营商或主管部门技术调整导致之影响。</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>3）<span style="font-family: 微软雅黑;">由于您原因（包括但不限于操作失误、系统故障等）导致的。</span></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>4）计算机系统遭到破坏、瘫痪或无法正常使用导致妈妈网未能依约提供服务。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>5）因法律、法规、政策调整或政府管制（政府专项行动等）而造成的暂时性关闭、服务调整等。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;"><span style="font-size: 14px; font-family: 微软雅黑;">（</span>6）其它非妈妈网过错造成的原因等。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第七条</span> <span style="font-family: 微软雅黑;">违约及赔偿</span></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">7.1任何一方直接或间接违反本协议的任何条款或不承担或不及时、不充分地承担本协议项下其应承担的义务，即构成违约行为。守约的一方（“守约方”）有权以书面通知要求违约的一方（“违约方”）纠正其违约行为，并采取充分、有效、及时的措施消除违约后果，并赔偿守约方因此而遭致的损失；若违约方在收到守约方关于其违约行为的上述通知后五个工作日内未纠正其违约行为，守约方有权在做出书面通知情况下终止本协议。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">7.2违约方因其违约行为而应赔偿的守约方的损失包括：守约方因违约方的违约行为而遭致的直接经济损失及任何可预期的间接损失及其他合理费用，包括但不限于律师费用、诉讼及仲裁费用、财务费用及差旅费等。</span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">7.3您为获得使用妈妈网推广服务而提供虚假材料的，属于您根本违约，妈妈网有权利终止本协议并追究您违约责任。</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">7.4您推广行为违反《妈妈网合作协议》的规定导致妈妈网受到第三方投诉（包括但不限于第三方以发函、媒体报道等形式指控妈妈网侵权、对妈妈网提起诉讼、向相关主管机关举报使妈妈网遭受审查或质询等），或使妈妈网面临相关主管机关的审查或质询，妈妈网有权将该推广服务等下线，停止针对您的“<span style="font-family: 微软雅黑;">妈妈网推广服务</span>”<span style="font-family: 微软雅黑;">。在发生上述情况时，如妈妈网决定继续履行本协议，您应立即整改推广的网站信息和</span>/<span style="font-family: 微软雅黑;">或网站上涉嫌违规内容，并向妈妈网提供有效证明材料；如您在接到妈妈网通知后明确要求停止</span>“<span style="font-family: 微软雅黑;">妈妈网推广服务</span>”<span style="font-family: 微软雅黑;">的，在您没有违反相关法律法规和</span>/<span style="font-family: 微软雅黑;">或本协议约定的前提下，妈妈网向您退回未消费完毕的</span>“<span style="font-family: 微软雅黑;">推广费</span>”<span style="font-family: 微软雅黑;">余额，本协议终止，妈妈网无需承担其他法律责任和费用补偿。</span><br/>7.5您推广行为违反《妈妈网合作协议》的规定导致妈妈网受到第三方投诉（包括但不限于第三方以发函、媒体报道等形式指控妈妈网侵权，对妈妈网提起诉讼，向相关主管机关举报使妈妈网遭受审查或质询等），或使妈妈网面临相关主管机关的审查或质询，您在收到妈妈网通知后应以自己名义出面与第三方协商、应诉或接受相关主管机关审查或质询，并承担所有费用（包括但不限于诉讼费、律师费、赔偿款），并赔偿因此给妈妈网造成的全部损失，妈妈网有权在您或其代理商已支付款项中抵扣上述费用和/<span style="font-family: 微软雅黑;">或损失赔偿款。</span></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-family: 微软雅黑; font-size: 14px;">&nbsp;</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第八条</span> <span style="font-family: 微软雅黑;">法律适用与争议之解决</span></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">8.1&nbsp;<span style="font-family: 微软雅黑;">本协议签订地位中华人民共和国广东省广州市天河区。</span></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;">8.2 <span style="font-family: 微软雅黑;">本协议的订立、履行、变更、终止、解除等一切问题均适用中华人民共和国大陆地区（仅为本协议之目的，不包括香港和澳门特别行政区和台湾）法律（不包括冲突法）。</span></span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-family: 微软雅黑; font-size: 14px;">8</span></strong><strong><span style="font-family: 微软雅黑; font-size: 14px;">.3 若双方之间发生任何纠纷或争议，首先应友好协商解决；协商不成的，双方在此完全同意将纠纷或争议提交协议签订地有管辖权的人民法院解决。</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;"><strong><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;">第九条</span> <span style="font-family: 微软雅黑;">协议附件及其他</span></span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑; font-size: 14px;">9.1本协议自您在妈妈网平台点击“同意”或“确认”（具体文案以妈妈网平台最终展示为准）后生效，有效期自您点击确认当天起至点击确认当年最后一日止，比如2017年2月1日至2017年12月31日，期限届满前任何您均为书面提出到期不续约的要求的额，双方合作期限自动顺延一年，顺延次数不限。任何一方有权提前30个自然日书面通知对方，终止本协议，双方应按照本协议约定结清费用，并妥善处理用户投诉，违约金、赔偿款以及退款等相关事宜（如有）。<br/>9.2如您要求妈妈网开具增值税专用发票，则您保证其提供的用于开具增值税专用发票的内容信息（包括纳税人名称、纳税人识别号、开户行、账号等）正确无误，并提供加盖公章或财务章的税务登记证和增值税一般纳税人的证明材料。由于您提供的信息或资料不准确而引起的一切后果由您自行承担。</span>
+                    </p>
+                    <p style=";line-height:24px;background:rgb(255,255,255)">
+                        <span style="font-family: 微软雅黑; font-size: 14px;">9.3<span style="font-family: 微软雅黑;">如本协议的任何条款被视作无效或无法执行，则除上述条款可被分离外，其余部分条款则仍具有法律效力。</span></span>
+                    </p>
+                    <p>
+                        <span style="font-size: 16px; font-family: 微软雅黑, Microsoft YaHei;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-size: 14px; font-family: 微软雅黑;">（以下无正文）</span></strong></span>
+                    </p>
+                    <p>
+                        <span style="font-family: 微软雅黑, Microsoft YaHei;"><strong><span style="font-family: 微软雅黑; font-size: 14px;">&nbsp;</span></strong></span>
+                    </p>
+                    <p style="text-align:right">
+                        <span style="font-size: 14px; font-family: 微软雅黑, Microsoft YaHei;">广州盛成妈妈网络科技股份有限公司</span>
+                    </p>
+                    <p>
+                        <br/>
+                    </p>
+                </div>
+                <input id="readRule" type="checkbox">
+                <p class="tips">请先阅读《妈妈网合作协议》</p>
+                <label for="readRule">已阅读并同意《妈妈网合作协议》</label>
+                <a id="stepTwo" href="javascript:;" class="btn-green not-active">我同意协议，继续下一步</a>
+            </div>
+            <div class="reg-box box3 J-regBox">
+                <div class="info-box">
+                    <h4>- 基本信息 -</h4>
+                    <div class="line" style="display: none;">
+                        <label>开户类型：</label>
+                        <input type="text" value="企业广告主" readonly="readonly">
+                        <i class="icon-help"></i>
+                        <span class="help">什么是企业广告主？<br>-按照营业执照范畴，推广自身产品或服务的企业、组织或个体户<br><br>妈网推广平台暂时只支持企业广告主类型</span>
+                    </div>
+                    <div class="line">
+                        <label for="enterprise">企业名称：</label>
+                        <input name="enterprise" id="enterprise" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['name']?>" placeholder="请填写与营业执照一致的企业名称">
+                        <p class="tips"></p>
+                    </div>
+                    <div class="line">
+                        <label for="alipay">对公支付宝账号：</label>
+                        <input name="alipay" id="alipay" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['bank_no']?>" placeholder="请输入有效的对公支付宝帐号">
+                        <p class="tips"></p>
+                        <i class="icon-help"></i>
+                        <span class="help">请填写企业名称与营业执照一致的对公支付宝账号。账号的充值都需要通过该绑定账号。</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4>- 资质信息 -</h4>
+                    <div class="line">
+                        <label for="project">推广项目：</label>
+                        <input name="project" id="project" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['item']?>" placeholder="请输入推广项目的名称">
+                        <p class="tips"></p>
+                    </div>
+                    <div class="line" style="display: none;">
+                        <label for="website">推广网址：</label>
+                        <input name="website" id="website" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['site']?>" placeholder="请输入推广项目的产品或服务说明网址">
+                        <p class="tips"></p>
+                    </div>
+                    <div class="line">
+                        <label>资质文件：</label>
+                        <em>请按下面参考示例，提供相关的资质文件</em>
+                        <i class="icon-help"></i>
+                        <span class="help">必要资质文件：营业执照、开户许可证；<br><br>非三证合一企业请补充上传：税务登记证、组织机构代码证；<br><br>增值税一般纳税人证书用于申请增值税专票。</span>
+                        <p id="picTips" class="tips"></p>
+                    </div>
+                    <ul class="upload-list clearfix">
+                        <li>
+                            <span class="tag">点击添加</span>
+                            <input name="licence" type="file" update="<?php echo empty($Account['files']['licence']) ? '': 1 ?>" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                            <img class="upload-pics" src="<?PHP echo empty($Account['files']['licence']) ? '':'/upload/'.$Account['files']['licence']?>" />
+                            <label>营业执照副本</label>
+                            <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                        </li>
+                        <li>
+                            <span class="tag">点击添加</span>
+                            <input name="tax" type="file" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                            <img class="upload-pics" src="<?PHP echo empty($Account['files']['tax']) ? '':'/upload/'.$Account['files']['tax']?>" />
+                            <label>税务登记证副本</label>
+                            <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                        </li>
+                        <li>
+                            <span class="tag">点击添加</span>
+                            <input name="org" type="file" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                            <img class="upload-pics" src="<?PHP echo empty($Account['files']['org']) ? '':'/upload/'.$Account['files']['org']?>" />
+                            <label>组织机构代码证</label>
+                            <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                        </li>
+                        <li>
+                            <span class="tag">点击添加</span>
+                            <input name="permit" type="file" update="<?php echo empty($Account['files']['permit']) ? '': 1 ?>" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                            <img class="upload-pics" src="<?PHP echo empty($Account['files']['permit']) ? '':'/upload/'.$Account['files']['permit']?>" />
+                            <label>开户许可证</label>
+                            <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                        </li>
+                        <li>
+                            <span class="tag">点击添加</span>
+                            <input name="cert" type="file" update="<?php echo empty($Account['files']['cert']) ? '': 1 ?>" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                            <img class="upload-pics" src="<?PHP echo empty($Account['files']['cert']) ? '':'/upload/'.$Account['files']['cert']?>" />
+                            <label>增值税一般纳税人证书</label>
+                            <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                        </li>
+                    </ul>
+                    <h5 class="demo-title">示例文件</h5>
+                    <ul class="demo-list clearfix">
+                        <li>
+                            <img src="/images/demo_01.png" alt="">
+                            <p class="desc">营业执照副本</p>
+                        </li>
+                        <li>
+                            <img src="/images/demo_02.png" alt="">
+                            <p class="desc">税务登记证副本</p>
+                        </li>
+                        <li>
+                            <img src="/images/demo_03.png" alt="">
+                            <p class="desc">组织机构代码证</p>
+                        </li>
+                        <li>
+                            <img src="/images/demo_04.png" alt="">
+                            <p class="desc">开户许可证</p>
+                        </li>
+                        <li>
+                            <img src="/images/demo_05.png" alt="">
+                            <p class="desc">一般纳税人证书</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4>- 联系信息 -</h4>
+                    <div class="line">
+                        <label for="contactName">合作联系人：</label>
+                        <input name="contact_name" id="contactName" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['contact']?>" placeholder="请输入合作联系人名称">
+                        <p class="tips"></p>
+                    </div>
+                    <div class="line">
+                        <label for="contactTel">联系人手机：</label>
+                        <input name="contact_tel" id="contactTel" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['phone']?>" placeholder="请输入合作联系人手机">
+                        <p class="tips"></p>
+                    </div>
+                    <div class="line">
+                        <label for="contactEmail">联系人邮箱：</label>
+                        <input name="contact_email" id="contactEmail" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['email']?>" placeholder="请输入合作联系人邮箱">
+                        <p class="tips"></p>
+                    </div>
+                    <div class="line">
+                        <label for="contactAddr">联系人地址：</label>
+                        <input name="contact_addr" id="contactAddr" class="J-Validator" type="text" value="<?PHP echo empty($Account) ? '':$Account['address']?>" placeholder="请输入合作联系人地址">
+                        <p class="tips"></p>
+                    </div>
+                    <a id="stepThree" update="<?php echo empty($update) ? '': '1';?>" href="javascript:;" class="btn-green">下一步</a>
+                </div>
+            </div>
+            <div id="license" class="reg-box box4 J-regBox">
+                <p id="licenseSbox" class="submit-box">
+                    <a id="agencyBtn" href="javascript:;" class="more-btn">添加更多授权广告主</a>
+                    <a id="submitBtn" href="javascript:;" class="submit-btn">确认资料 直接申请开户</a>
+                    <a href="/ads/faq" target="_blank" class="ask">申请开户有疑问？</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <div class="footer">© 2017 广州盛成妈妈网络科技股份有限公司（股票代码：妈妈网834093）版权所有 粤ICP备09174648号</div>
+    <script>
+        var J_data = <?php echo $selectJson ;?>;
+        var J_Qua = <?php echo empty($Qualifys) ? '[ [] ]' : $Qualifys ;?>;
+        var agency = <?php echo empty($Account) || $Account['utype'] !=1 ? 'false' : 'true' ;?>;
+    </script>
+    <script src="//static.mama.cn/std/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//static.mama.cn/std/lib/artTemplate/3.0.0/template.js"></script>
+    <script src="/plugins/auxiliary/auxiliary.min.js"></script>
+    <script src="/plugins/exif/exif.min.js"></script>
+    <script src="/plugins/jQuery/jquery.form.js"></script>
+    <script id="licenseScript" type="text/html">
+        <div class="license-box">
+            <div class="info-box">
+                {{if agency}}
+                <h4>-  代投信息  -</h4>
+                <strong> </strong>
+                <div class="line">
+                    <label for="businessName">授权广告主企业名称：</label>
+                    <input class="J-business" name="qualify[{{pos}}][name]" type="text" value="{{qualify && qualify.company ? qualify.company :''}}" placeholder="请输入授权广告主企业名称">
+                    <p class="tips"></p>
+                </div>
+                {{else}}
+                <h4 class="not-ag">-  行业信息  -</h4>
+                {{/if}}
+                <div class="select">
+                    <label>所属行业：</label>
+                    <select  name="qualify[{{pos}}][pid]" class="J-primary">
+                        <option value="">请选择</option>
+                        {{each primary as value index}}
+                        <option value="{{value.pv}}" {{qualify && qualify.pri_industry && qualify.pri_industry == value.pv ? 'selected':''}}>{{value.p}}</option>
+                        {{/each}}
+                    </select>
+                    <select  name="qualify[{{pos}}][id]" class="J-secondary" data-value="{{qualify && qualify.sub_industry ? qualify.sub_industry :''}}">
+                        <option value="">请选择</option>
+                    </select>
+                    <p class="tips"></p>
+                </div>
+                <div class="checkbox">
+                    <label>特殊业务范围：</label>
+                    <div class="opiton-box" data-pos="{{pos}}" data-value="{{qualify && qualify.special_business ? qualify.special_business :''}}">
+                        <label class="option none">无</label>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-box" data-pos="{{pos}}">
+                <h4>-  请按下面说明，提供相关的资质文件 -</h4>
+                <div class="license-tips">
+                    {{if agency}}
+                    <div>
+                        <em>代投企业基本资质文件：</em>
+                        <p>1、营业执照  2、授权代理证明</p>
+                    </div>
+                    {{/if}}
+                    <div class="tips-1">
+                        <em>基础必需行业资质文件：</em>
+                        <p>无</p>
+                    </div>
+                    <div class="tips-2">
+                        <em>特殊业务需补充：</em>
+                        <p>无</p>
+                    </div>
+                    <div class="tips-3">
+                        <em>准入规则：</em>
+                        <p>无禁投项</p>
+                    </div>
+                </div>
+                {{include 'uploadScript'}}
+                
+            </div>
+            {{if show}}
+            <a href="javascript:;" class="J-delete-ag delete-btn"></a>
+            {{/if}}
+        </div>
+    </script>
+    <script id="uploadScript" type="text/html">
+        <ul class="upload-list clearfix">
+            <li>
+                <span class="tag">点击添加</span>
+                <input type="file" name="qualify[{{pos}}][{{count+1}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                <img class="upload-pics" src="{{ qualify && qualify.qualify_file && qualify.qualify_file[count] ? '/upload/'+ qualify.qualify_file[count] :''}}" />
+                <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+            </li>
+            <li>
+                <span class="tag">点击添加</span>
+                <input type="file" name="qualify[{{pos}}][{{count+2}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                <img class="upload-pics" src="{{ qualify && qualify.qualify_file && qualify.qualify_file[count+1] ? '/upload/'+ qualify.qualify_file[count+1] :''}}" />
+                <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+            </li>
+            <li>
+                <span class="tag">点击添加</span>
+                <input type="file" name="qualify[{{pos}}][{{count+3}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                <img class="upload-pics" src="{{ qualify && qualify.qualify_file && qualify.qualify_file[count+2] ? '/upload/'+ qualify.qualify_file[count+2] :''}}" />
+                <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+            </li>
+            <li>
+                <span class="tag">点击添加</span>
+                <input type="file" name="qualify[{{pos}}][{{count+4}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                <img class="upload-pics" src="{{ qualify && qualify.qualify_file && qualify.qualify_file[count+3] ? '/upload/'+ qualify.qualify_file[count+3] :''}}" />
+                <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+            </li>
+            <li>
+                <span class="tag">点击添加</span>
+                <input type="file" name="qualify[{{pos}}][{{count+5}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                <img class="upload-pics" src="{{ qualify && qualify.qualify_file && qualify.qualify_file[count+4] ? '/upload/'+ qualify.qualify_file[count+4] :''}}" />
+                <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+            </li>
+            {{ if qualify && qualify.qualify_file }}
+                {{each qualify.qualify_file as value index}}
+                    {{ if index>4 }}
+                        {{if index%5 == 0 }}
+                            </ul>
+                        <ul class="upload-list clearfix">
+                        {{/if}}
+                        <li>
+                            <span class="tag">点击添加</span>
+                            <input type="file" name="qualify[{{pos}}][{{index+1}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                            <img class="upload-pics" src="{{ qualify && qualify.qualify_file && qualify.qualify_file[index] ? '/upload/'+ qualify.qualify_file[index] :''}}" />
+                            <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                        </li>
+                    {{/if}}
+                {{/each}}
+                {{each qualify.qualify_file as value index }}
+                    {{ if 5 - qualify.qualify_file.length%5 - index > 0 }}
+                    <li>
+                        <span class="tag">点击添加</span>
+                        <input type="file" name="qualify[{{pos}}][{{qualify.qualify_file.length+index+1}}]" class="upload-btn J-upload" accept="image/gif,image/jpeg,image/jpg,image/png">
+                        <img class="upload-pics" src="" />
+                        <div class="mask J-picMask"><div class="delete J-picDelete"></div></div>
+                    </li>
+                    {{/if}}
+                {{/each}}
+            {{/if}}
+        </ul>
+    </script>
+    <script src="/js/register.js?v=1.2"></script>
+</body>
+</html>

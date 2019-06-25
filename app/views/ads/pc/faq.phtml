@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-cms-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content="妈妈网, 推广">
+    <meta name="description" content="妈妈网">
+    <title>常见问题 - 妈妈网推广平台</title>
+    <script src="//static.mama.cn/std/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//static.mama.cn/std/lib/layer/3.0.1/layer.js"></script>
+    <link href="/css/main.css?v=1.2" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="content">
+            <h1><a href="/ads"><img src="/images/logo.png" alt="妈妈网推广平台"></a></h1>
+            <ul class="nav">
+                <li><a href="/ads/">平台概览</a></li>
+                <li><a href="/ads/flow">流量变现</a></li>
+                <li class="active"><a href="/ads/faq">常见问题</a></li>
+            </ul>
+            <div class="btn">
+                <?php if($is_login){?>
+                <a href="/financetool" class="btn-white">充值</a>
+                <a href="/" class="btn-white"><?php echo $username;?></a>
+                <?php }else{?>
+                <a href="/ads/register" class="btn-white">注册</a>
+                <a href="/" class="btn-white">登录投放平台</a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="content-box">
+                <div class="sidebar">
+                    <ul>
+                        <li class="show">
+                            <div class="title" data-toggle="tg-collapse">新手开户</div>
+                            <div class="panel" style="display: block" id="achor_02_tg">
+                                <a href="javascript:;" class="active" onclick="toggleRoute('#achor_01',this)">如何开户?</a>
+                                <a href="javascript:;" id="achor_02_href" onclick="toggleRoute('#achor_02',this)">了解开户？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_03',this)">开户申请审核要多久？</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title" data-toggle="tg-collapse">账户充值</div>
+                            <div class="panel">
+                                <a href="javascript:;" onclick="toggleRoute('#achor_11',this)">如何充值？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_12',this)">账号金额如何消耗与查看？</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title" data-toggle="tg-collapse">发票开具</div>
+                            <div class="panel">
+                                <a href="javascript:;" onclick="toggleRoute('#achor_51',this)">如何申请发票？</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title" data-toggle="tg-collapse">素材审核</div>
+                            <div class="panel">
+                                <a href="javascript:;" onclick="toggleRoute('#achor_21',this)">素材为什么需要审核？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_22',this)">无法通过审核的原因有哪些？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_23',this)">素材审核要多久？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_24',this)">什么情况会需要进入审核？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_25',this)">如何知道审核结果？</a>
+                            </div>
+                        </li>
+                        <?php if( $is_login ){?>
+                        <li>
+                            <div class="title" id="achor_31_tg" data-toggle="tg-collapse">操作指引</div>
+                            <div class="panel">
+                                <a href="javascript:;" id="achor_31_href" onclick="toggleRoute('#achor_31',this)">如何创建新推广？</a>
+                            </div>
+                        </li>
+                        <?php }?>
+                        <li>
+                            <div class="title" data-toggle="tg-collapse">平台概要</div>
+                            <div class="panel">
+                                <a href="javascript:;" onclick="toggleRoute('#achor_41',this)">覆盖了哪些广告类型？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_42',this)">广告投放有几种状态？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_43',this)">如何使用用户定向做投放？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_44',this)">如何进行流量分析？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_45',this)">有哪些计费方式？</a>
+                                <a href="javascript:;" onclick="toggleRoute('#achor_46',this)">如何查看投放效果？</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-detail">
+                    <!-- 0 -->
+                    <div id="achor_01" class="achor" style="display: block">
+                        <h1>如何开户?</h1>
+                        <p>平台现已开始支持自助注册-开户-充值-投放一站式自助服务。</p>
+                        <p>
+                            点击 <a target="_blank" title="自助注册" href="/ads/register">自助注册</a> 快速开启推广之路
+                        </p>
+                    </div>
+                    <div id="achor_02" class="achor">
+                        <h1>了解开户?</h1>
+                        <p>开户申请需要录入的资料大概如下图：打<span class="correct">√</span>为必须，打<span class="wrong">×</span>为不需要</p>
+                        <table class="fill-table" border="1" cellspacing="0" cellpadding="5">
+                            <thead>
+                                <tr>
+                                    <th>模块</th>
+                                    <th>录入信息</th>
+                                    <th>直客型广告主</th>
+                                    <th>代理型广告主</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">基本信息</td>
+                                    <td>企业名称</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td>对公银行卡号</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">资质信息</td>
+                                    <td>推广项目</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td>资质文件</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td>行业信息</td>
+                                    <td>公司所属行业信息</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="wrong">×</span></td>
+                                </tr>
+                                <tr>
+                                    <td>代投信息</td>
+                                    <td>授权广告主行业信息</td>
+                                    <td><span class="wrong">×</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">联系信息</td>
+                                    <td>合作联系人</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td>联系人手机</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td>联系人邮箱</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                                <tr>
+                                    <td>联系人地址</td>
+                                    <td><span class="correct">√</span></td>
+                                    <td><span class="correct">√</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>1、自助开户目前仅支持广告主自行注册，如果为联媒合作，请点击：<a target="_blank" href="/ads/contact">和我们联系</a></p>
+                        <p>2、广告主自行注册视注册企业的性质分为两种模式：直客型与代理型</p>
+                        <p>3、需要填写的资质文件资料：</p>
+                        <p class="tindent-23">不管是直客广告主还是代理广告主，都需要上传所在企业的：</p>
+                        <p class="tindent-20">（三证合一的）-营业执照副本、开户许可证、增值税纳税人证明</p>
+                        <p class="tindent-20">（非三证合一的）-营业执照副本、税务登记证、组织机构代码证、开户许可证、增值税纳税人证明</p>
+                        <p>4、行业资质文件要求：</p>
+                        <p class="tindent-23">互联网广告投放针对不同行业和业务范围有不同的行业资质要求，详细可下载：<a target="_blank" href="/ads/document?t=1">广告投放行业资质说明</a></p>
+                        <p class="tindent-23">对于直客：</p>
+                        <p class="tindent-23">需要上传所属行业的要求资质文件</p>
+                        <p class="tindent-23">对于代理：</p>
+                        <p class="tindent-23">需要上传：代投广告主授权代理证明、代投广告主营业执照、代投广告主所属行业资质文件</p>
+                    </div>
+                    <div id="achor_03" class="achor">
+                        <h1> 开户申请审核要多久?</h1>
+                        <p>工作日：9:00 - 18:00</p>
+                        <p>温馨提示：</p>
+                        <p>&emsp;&emsp;一般情况，开户申请在提交后一个工作日内完成审核</p>
+                    </div>
+                    <!-- 1 -->
+                    <div id="achor_11" class="achor">
+                        <h1>如何充值？</h1>
+                        <p>平台现已开始支持自助注册-开户-充值-投放一站式自助服务。</p>
+                        <p>点击 <a target="_blank" title="自助充值" href="/financetool">自助充值</a> 快速充值</p>
+                    </div>
+                    <div id="achor_12" class="achor">
+                        <h1>账号金额如何消耗与查看？</h1>
+                        <p>广告主线下充值金额与对应的平台账号上的金额是一致的，在平台投放广告后会按照不同的广告计费方式实时进行计费。
+                        </p>
+                        <p>账号余额会实时显示在“广告详情“页，当账号金额消耗完毕后，将会停止广告的投放，需要广告主联系商务及时进行充值。 </p>
+                    </div>
+                    <div id="achor_51" class="achor">
+                        <h1>如何申请发票？</h1>
+                        <p>平台新增了【财务工具】功能模块，在其中的【发票开具】中可申请发票开具。
+                        </p>
+                        <p>发票类型支持：增值税普票和增值税专票。 </p>
+                        <p>发票寄送会在审核通过后的次月进行寄送。 </p>
+                    </div>
+                    <!-- 2 -->
+                    <div id="achor_21" class="achor">
+                        <h1>素材为什么需要审核？</h1>
+                        <p>为了规范盛成妈妈网广告活动，保护妈妈网用户群体的合法权益，维护各广告主公平竞争与和平的秩序，同时也为了更好地实行互联网广告法的条例，广告投放的素材需要经过专人的审核无误后再进入到正式的投放。</p>
+                        <p>需要审核的素材大致包括：图片、文字、链接等广告素材</p>
+                    </div>
+                    <div id="achor_22" class="achor">
+                        <h1>无法通过审核的原因有哪些？</h1>
+                        <table border="1" cellspacing="0" cellpadding="5">
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 700;">拒绝通过审核的原因</td>
+                                </tr>
+                                <tr>
+                                    <td>含有涉黄嫌疑的图片或文字</td>
+                                </tr>
+                                <tr>
+                                    <td>含有政治敏感反社会等词语</td>
+                                </tr>
+                                <tr>
+                                    <td>含有不符合广告法的敏感词或不符合推销商品与服务实际的夸大词语</td>
+                                </tr>
+                                <tr>
+                                    <td>含有妈妈网竞品图文广告信息</td>
+                                </tr>
+                                <tr>
+                                    <td>含有其他经广告排期途径进行宣传的品牌信息</td>
+                                </tr>
+                                <tr>
+                                    <td>其他：包括但不止于以上的敏感广告图文信息</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="achor_23" class="achor">
+                        <h1>素材审核要多久？</h1>
+                        <p>工作日：9:00 - 18:00</p>
+                        <p>温馨提示：</p>
+                        <p>一般情况，素材在提交后一个工作日内完成审核
+                        </p>
+                    </div>
+                    <div id="achor_24" class="achor">
+                        <h1>什么情况会需要进入审核？</h1>
+                        <p>新建投放，上传投放素材时会触发审核。</p>
+                        <p>修改素材，包括修改素材图片、文字、链接等都会触发再次审核。</p>
+                    </div>
+                    <div id="achor_25" class="achor">
+                        <h1>如何知道审核结果？</h1>
+                        <p>审核通过的广告会直接进入投放，不再另行通知。</p>
+                        <p>审核不通过的广告会在审核完毕后半小时内会以邮件的形式汇总通知到广告主平台账号绑定的邮箱。
+                        </p>
+                    </div>
+                    <!-- 3 -->
+                    <?php if( $is_login ){?>
+                    <div id="achor_31" class="achor">
+                        <h1>如何创建新推广？</h1>
+                        <p>1、进入“自助投放管理”页面，点击[新增]按钮：</p>
+                        <img src="/images/content/image001.png" class="pointer" onclick="showImage(this)" alt="">
+                        <p>2、填写推广的基本信息，右侧有相关的填写说明，点击[下一步]进入“用户定向”选择：</p>
+                        <img src="/images/content/image003.png" class="pointer" onclick="showImage(this)" alt="">
+                        <p>3、选择“用户定向”条件，选择“全量用户”即为所有用户，点击[下一步]上传素材：</p>
+                        <img src="/images/content/image005.png" class="pointer" onclick="showImage(this)" alt="">
+                        <p>4、按照选定的广告类型上传广告素材：</p>
+                        <img src="/images/content/image007.png" class="pointer" onclick="showImage(this)" alt="">
+                        <p>信息流类型：：</p>
+                        <img src="/images/content/image009.png" class="pointer" onclick="showImage(this)" alt="">
+                    </div>
+                    <?php }?>
+                    <!-- 4 -->
+                    <div id="achor_41" class="achor">
+                        <h1>覆盖了哪些广告类型？</h1>
+                        <p>广告平台目前有两个主要投放端：APP端、网页端。</p>
+                        <p>APP端覆盖了两个主要APP：妈妈网、孕育管家，主要广告类型为：信息流、横幅广告。</p>
+                        <p>网页端覆盖了主要wap站点，包括：垂直门户中心mama.cn、32个同城站点、91baby，以及32站同城pc站点，主要广告类型为：横幅广告。</p>
+                        <p><a href="/ads/document">点击获取广告刊例说明</a></p>
+                    </div>
+                    <div id="achor_42" class="achor">
+                        <h1>广告投放有几种状态？</h1>
+                        <p>
+                            <h4>广告投放有以下几种状态：</h4>
+                            <ul>
+                                <li>审核中：广告主已经提交投放申请并且管理员未进行审核</li>
+                                <li>审核不通过：广告主的投放素材因某些问题被驳回申请，需要重新提交再次进入审核</li>
+                                <li>等待开始：广告主的投放素材通过了审核，并处于未开始投放的时间，为“等待开始”的状态</li>
+                                <li>正在投放：广告主的投放素材通过了审核，并且处于投放的时间段内，且账户内余额充足，为“正在投放”的状态</li>
+                                <li>投放暂停：广告主手动暂停投放</li>
+                                <li>投放结束：投放到时自动下架</li>
+                                <li>日限额暂停：广告投放已经超过日限额而暂停投放，第二天如果还处于投放时间段内会自动开启投放</li>
+                                <li>余额不足自动下架：账户余额不足，所有正在投放期间的广告会自动下架，充值完毕后所有仍在投放期间的广告会自动全部上架。</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="achor_43" class="achor">
+                        <h1>如何使用用户定向做投放？</h1>
+                        <p>根据广告投放需求可以对用户进行分群投放，可以进行分群的维度有：用户孕育状态、地区、兴趣标签。</p>
+                        <p>比如：某种产品的目标 用户是广东省的备孕期用户，可以设定广东省+备孕的用户分组，然后进行相关的投放。</p>
+                    </div>
+                    <div id="achor_44" class="achor">
+                        <h1>如何进行流量分析？</h1>
+                        <p>每一个广告都有实时的曝光度、点击、点击率的反馈，对于跨多日与有过不同用户定向的投放，也可以做不同维度的曝光度、点击的数据分析，方便广告主对用户定向、素材等进行适当的调整以更好地优化广告投放。</p>
+                    </div>
+                    <div id="achor_45" class="achor">
+                        <h1>有哪些计费方式？</h1>
+                        <p>目前平台支持CPC、CPM计费方式。</p>
+                        <p>CPC是实时计费，点击单价由各广告主出价，由平台决定最低CPC价格。</p>
+                        <p>CPM是预扣费方式，由广告主决定目标CPM值，由平台决定CPM单价与最低CPM目标值。</p>
+                    </div>
+                    <div id="achor_46" class="achor">
+                        <h1>如何查看投放效果？</h1>
+                        <p>使用平台进行投放，可以专注于投放素材的选择，结合浏览量与点击量的反馈进行素材的调整，平台会最大化地优化投放策略，使得每个广告主的投放有最优化的回报。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">© 2017 广州盛成妈妈网络科技股份有限公司（股票代码：妈妈网834093）版权所有 粤ICP备09174648号</div>
+    <script>
+    function showImage(el) {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 1,
+            skin: 'layui-layer-rim', //加上边框
+            area: '1200px',
+            shadeClose: true,
+            content: '<img src="' + el.src + '">'
+        });
+    }
+
+    function toggleRoute(id, el) {
+        $('.sidebar .active').removeClass('active');
+        $(el).addClass('active');
+        $(id).show().siblings().hide();
+    }
+
+    $(function() {
+        $('[data-toggle="tg-collapse"]').click(function() {
+            $('[data-toggle="tg-collapse"]').parent('li').removeClass('show');
+            $('.panel').slideUp();
+            if ($(this).next('.panel').is(":visible") === true) {
+                $(this).next('.panel').slideUp().end().parent('li').removeClass('show');
+            } else {
+                $(this).next('.panel:hidden').slideDown().end().parent('li').addClass('show');
+            }
+        });
+
+        var url = window.location.href;
+        var jindex = url.lastIndexOf('#');
+        if (jindex > 0) {
+            var div_id = url.substring(jindex + 1, url.length);
+            if (typeof div_id !== 'undefined' && div_id != null && div_id != '' && $('div#' + div_id).length > 0 && $('div#' + div_id + '_tg').length > 0) {
+                $('div#' + div_id + '_tg').trigger('click');
+                $('.sidebar .active').removeClass('active');
+                $('a#' + div_id + '_href').addClass('active');
+                $('#' + div_id).show().siblings().hide();
+            }
+        }
+
+    })
+    </script>
+</body>
+
+</html>

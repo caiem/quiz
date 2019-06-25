@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cms-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content="妈妈网, 推广">
+    <meta name="description" content="妈妈网">
+    <title>妈妈网推广平台</title>
+    <link href="/css/main.css?v=1.2" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <h1><a href="/ads"><img src="/images/logo.png" alt="妈妈网推广平台"></a></h1>
+            <ul class="nav">
+                <li class="active"><a href="/ads/">平台概览</a></li>
+                <li><a href="/ads/flow">流量变现</a></li>
+                <li><a href="/ads/faq">常见问题</a></li>
+            </ul>
+            <div class="btn">
+                <?php if($is_login){?>
+                <a href="/financetool" class="btn-white">充值</a>
+                <a href="/" class="btn-white"><?php echo $username;?></a>
+                <?php }else{?>
+                <a href="/ads/register" class="btn-white">注册</a>
+                <a href="/" class="btn-white">登录投放平台</a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+     <div class="mod-special">
+        <h2>妈网推广平台 高效实现您的营销目标</h2>
+        <strong>最优质点位资源  六大产品核心优势  多年母婴垂直用户画像沉淀</strong>
+        <a target="_blank" href="/ads/register">四步轻松注册</a>
+        <div id="anim1" class="show">
+            <div class="mobile"></div>
+        </div>
+        <ul id="anim2" class="special">
+            <li>
+                <h3><img src="/images/spec_01.png" alt="最优质的资源"></h3>
+                <p>妈妈网APP 孕育管家APP</p>
+                <p>妈妈网资讯门户</p>
+                <p>全国32站城市妈妈网</p>
+            </li>
+            <li>
+                <h3><img src="/images/spec_02.png" alt="最显著的位置"></h3>
+                <p>APP开机闪屏</p>
+                <p>首页信息流</p>
+                <p>首页焦点轮播图</p>
+            </li>
+            <li>
+                <h3><img src="/images/spec_03.png" alt="高效的转化率"></h3>
+                <p>平均CTR高达<em style="color:#69d178">2%</em></p>
+                <p><em style="color:#69d178">百万级</em>日均曝光度</p>
+            </li>
+        </ul>
+    </div>
+    <div class="mod-advantage">
+        <h2>产品核心优势</h2>
+        <ul id="anim3" class="advantage">
+            <li class="adv1">
+                <h3><img src="/images/adv_01.png" alt="技术支持"></h3>
+                <p>广告主自助推广平台</p>
+                <p>实时在线投放规则引擎</p>
+            </li>
+            <li class="adv2">
+                <h3><img src="/images/adv_02.png" alt="定向投放"></h3>
+                <p>妈妈网独有DMP用户数据沉淀</p>
+            </li>
+            <li class="adv3">
+                <h3><img src="/images/adv_03.png" alt="优选资源"></h3>
+                <p>全网优质点位资源</p>
+                <p>优选媒体全网触达（即将上线）</p>
+            </li>
+            <li class="adv4">
+                <h3><img src="/images/adv_04.png" alt="高性价比"></h3>
+                <p>实时竞价 节约成本</p>
+            </li>
+            <li class="adv5">
+                <h3><img src="/images/adv_05.png" alt="真实流量"></h3>
+                <p>非人为作弊 非程序点击</p>
+            </li>
+            <li class="adv6">
+                <h3><img src="/images/adv_06.png" alt="精益营销"></h3>
+                <p>实时数据反馈</p>
+                <p>投放策略随时调整</p>
+            </li>
+        </ul>
+    </div>
+    <div class="mod-user">
+        <h2>用户画像</h2>
+        <ul id="anim4" class="user">
+            <li>
+                <h3><img src="/images/user_01.png" alt="孕育状态"></h3>
+                <p>备孕 孕早期 孕中期 孕晚期<br>宝宝0~4个月 宝宝4~8个月<br>宝宝8~12个月 宝宝1~3岁<br>宝宝3岁以上</p>
+            </li>
+            <li>
+                <h3><img src="/images/user_02.png" alt="地域识别"></h3>
+                <p>覆盖全国：<br>北京市 上海市 广东省 广州市<br>湖北省 武汉市 四川省 重庆市<br>香港 台湾 澳门...</p>
+            </li>
+            <li>
+                <h3><img src="/images/user_03.png" alt="兴趣标签"></h3>
+                <p>购物 医疗 文化教育<br>房产置业 旅行出游<br>时尚 美食...</p>
+            </li>
+            <li>
+                <h3><img src="/images/user_04.png" alt="其他维度"></h3>
+                <p>电商标签（筹备中）<br>其他更多维度</p>
+            </li>
+        </ul>
+    </div>
+    <div class="mod-contact">
+        <h2>联系方式</h2>
+        <h3><?php echo empty($Contract['name']) ? '朱小姐':$Contract['name']; ?></h3>
+        <a href="mailto:<?php echo empty($Contract['email'])? 'zhull@mama.cn' : $Contract['email'] ?>"><?php echo empty($Contract['email'])? 'zhull@mama.cn' : $Contract['email'] ?> </a>
+    </div>
+    <div class="footer idx-footer">© 2017 广州盛成妈妈网络科技股份有限公司（股票代码：妈妈网834093）版权所有  粤ICP备09174648号</div>
+</body>
+<script src="//static.mama.cn/std/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    window.onload = function(){
+        window.onscroll = function(){
+            if($(".anim").length < 4){
+                var _top = $(document).scrollTop();
+                if(_top >= 200){
+                    $("#anim1").addClass("anim")
+                }
+                if(_top >= 900){
+                    $("#anim2").addClass("anim")
+                }
+                if(_top >= 1700){
+                    $("#anim3").addClass("anim")
+                }
+                if(_top >= 2700){
+                    $("#anim4").addClass("anim")
+                }
+            }
+        }
+    }
+</script>
+</html>

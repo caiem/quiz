@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cms-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content="妈妈网, 推广">
+    <meta name="description" content="妈妈网">
+    <title>自助注册 - 妈妈网推广平台</title>
+    <link href="/css/main.css?v=1.2" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <h1><a href="/ads"><img src="/images/logo.png" alt="妈妈网推广平台"></a></h1>
+            <div class="btn">
+                <?php if($is_login){?>
+                <a href="/financetool" class="btn-white">充值</a>
+                <a href="/" class="btn-white"><?php echo $username;?></a>
+                <?php }else{?>
+                <a href="/ads/register" class="btn-white">注册</a>
+                <a href="/" class="btn-white">登录投放平台</a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <div class="status">
+        <div class="status-box">
+            <?php if( $status==1 ){?>
+            <img src="/images/status_success.png" alt="">
+            <h2>恭喜！您已经完成账号注册与开户申请~</h2>
+            <p>我们将在24小时内审核完毕，审核结果将通过邮件进行通知<br>请耐心等候审核结果~</p>
+            <?php }else if($status==-1){?>
+            <img src="/images/status_fail.png" alt="">
+            <h2>很抱歉！您的开户申请资料因为：</h2>
+            <p><?php echo $reason;?><br>不能通过审核，请更换后重新提交申请~</p>
+            <a href="/ads/apply" class="btn-green">重新提交申请</a>
+            <?php }else if($status==-2){?>
+            <img src="/images/status_checking.png" alt="">
+            <h2>您的开户申请已经重新提交审核，请耐心等候审核结果，注意查收邮件~</h2>
+            <?php }else{?>
+            <img src="/images/status_checking.png" alt="">
+            <h2>您的开户申请还在审核当中，请耐心等候哦~</h2>
+            <?php }?>
+        </div>
+    </div>
+    <div class="footer">© 2017 广州盛成妈妈网络科技股份有限公司（股票代码：妈妈网834093）版权所有 粤ICP备09174648号</div>
+</body>
+</html>

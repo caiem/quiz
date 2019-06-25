@@ -1,0 +1,6 @@
+2 0 * * * /bin/bash /data/wwwroot/quiz/current/app/logclean.sh >/dev/null 2>&1
+2 * * * * php /data/wwwroot/quiz/current/app/cli.php question check >/dev/null 2>&1
+5 3 * * * php /data/wwwroot/quiz/current/app/cli.php question rank >/dev/null 2>&1
+5 2 * * * php /data/wwwroot/quiz/current/app/cli.php question create >/dev/null 2>&1
+*/1 * * * * bash /data/wwwroot/quiz/current/app/monitor.sh >/dev/null 2>&1
+*/1 * * * * bash /data/wwwroot/quiz/current/app/check.sh >/dev/null 2>&1

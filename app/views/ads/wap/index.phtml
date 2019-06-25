@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="Keywords" content="妈妈网, 推广">
+  <meta name="description" content="妈妈网">
+  <title>妈妈网推广平台</title>
+  <script src="//static.mama.cn/std/lib/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//static.mama.cn/std/lib/MamaJSBridge/1.0/MamaJSBridge.min.js"></script>
+  <script>
+    var J_PARAM = {
+      mshare: {
+        title: "妈妈们都喜欢看的广告",// 标题
+        desc: "厉害了妈妈网推广平台，专为中小型广告主而来，你还在等什么？",// 描述
+        image: "http://ad.service.mama.cn/images/wap/share.jpg", // 缩略图src [https http]
+        link: "http://ad.service.mama.cn/ads", // 链接 location.href https
+      }
+    }
+  </script>
+  <script src="/js/shareconfig.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+      color: #333;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      line-height: 1.5;
+    }
+    
+    img {
+      max-width: 100%;
+      outline: none;
+      border: none;
+    }
+    
+    a,
+    a:hover,
+    a:active {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: #6eb92b;
+    }
+    
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .header {
+      line-height: 75px;
+      padding: 0 15px;
+    }
+    
+    .header .logo {
+      width: 110px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .header .logo img {
+      display: block;
+    }
+    
+    .header h1 {
+      color: #999999;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+    }
+    
+    .container {
+      height: 280px;
+      background-color: #fdfdfd;
+      background: url('/images/wap/banner_1.png') no-repeat center center;
+      background-size: cover;
+    }
+    
+    .container h2 {
+      margin: 0;
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #333;
+      padding: 65px 30px;
+      padding-bottom: 0;
+    }
+    
+    .container .desc {
+      font-size: 12px;
+      padding: 0 30px;
+    }
+    
+    .feat h2 {
+      text-align: center;
+      width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .feat ul {
+      overflow: hidden;
+      _height: 1%;
+    }
+    
+    .feat li {
+      float: left;
+      width: 49.9%;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    
+    .feat li .desc {
+      font-size: 12px;
+    }
+    
+    .feat li .content {
+      font-size: 14px;
+    }
+    
+    .footer {
+      font-size: 12px;
+      padding: 10px;
+      color: #888888;
+      text-align: center;
+    }
+    
+    .icon {
+      display: inline-block;
+      width: 39px;
+      height: 42px;
+    }
+    
+    .icon_contact {
+      background: url('/images/icon/contact.png') no-repeat center center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    
+    .icon_phone {
+      background: url('/images/icon/phone.png') no-repeat center center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    
+    .icon_mobile {
+      background: url('/images/icon/mobile.png') no-repeat center center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    
+    .icon_email {
+      background: url('/images/icon/email.png') no-repeat center center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <a href="/ads/" class="logo">
+      <img src="/images/wap/logo.png" alt="">
+    </a>
+    <h1>推广平台</h1>
+  </div>
+  <div class="container">
+    <h2>妈网推广平台<br>高效实现您的营销目标</h2>
+    <div class="desc">
+      APP、WAP、PC全方面点位覆盖<br>基础用户定向<br>增加在线流量
+    </div>
+  </div>
+  <div class="feat">
+    <h2>
+      <img src="/images/wap/index_title.png" alt="">
+    </h2>
+    <ul>
+      <li>
+        <i class="icon icon_contact"></i>
+        <div class="desc">联系人</div>
+        <div class="content"><?php echo $Contract['name']?></div>
+      </li>
+<!--      <li>
+        <i class="icon icon_phone"></i>
+        <div class="desc">座机</div>
+        <div class="content">暂未开放</div>
+      </li>
+      <li>
+        <i class="icon icon_mobile"></i>
+        <div class="desc">手机</div>
+        <div class="content">暂未开放</div>
+      </li> -->
+      <li>
+        <i class="icon icon_email"></i>
+        <div class="desc">电子邮箱</div>
+        <div class="content"><?php echo $Contract['email']?></div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    © 2017 广州盛成妈妈网络科技股份有限公司<br>（股票代码：妈妈网834093）版权所有。<br>粤ICP备09174648号
+  </div>
+</body>
+
+</html>

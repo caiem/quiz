@@ -1,0 +1,13 @@
+author:wudiandian
+date:2016-12-16
+文档:http://wiki.corp.mama.cn/pages/viewpage.action?pageId=74519812
+
+
+注意:
+
+1、对于SDK请不要私下里修改里面的php代码以适应自己的应用,会造成，升级sdk版本出现困难(升级sdk以后可以做到直接覆盖掉addressSdk文件夹即可),有功能需要请联系sdk的维护人员统一修改
+
+2、如何升级:使用新的sdk：将addressSdk整个文件夹覆盖掉你原来的文件夹，除了memberSdk/library/ConfigApp.php，因为这个文件存储着分配给您的密钥，如果实在不小心覆盖掉这个文件,只要在里面重新填上分配密钥即可使用。
+   addressSdk/library/AdrConfigApp.php里有默认的密钥,不要使用默认的。
+3、新包下载: http://wiki.corp.mama.cn/pages/viewpage.action?pageId=1507454 文档了包括了相关说明。
+
